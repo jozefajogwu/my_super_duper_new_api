@@ -7,5 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;
-}
+   // use HasFactory;
+
+   protected $fillable = [
+       'title',
+       'slug',
+       'likes',
+       'content'
+   ];
+
+   protected $casts = [
+       'likes'=> 'integer',
+    ];
+   }

@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +22,11 @@ TO CREATE A RESOURCE IN LARAVEL, FOLLOW THE FOLLOWING STEPS
 4. return that information.
 */
 
-Route::get('/posts');
+// Route::resource('posts', 'PostController');
+
+// Route::resource('posts', 'PostController');
+
+Route::resource('posts', PostController::class);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
